@@ -67,3 +67,34 @@ li {
     font-weight: bold;
     margin-top: 10px;
 }
+
+/* Header subtitle */
+header p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Panel hover effect */
+.panel {
+    transition: transform 0.2s ease;
+}
+
+.panel:hover {
+    transform: translateY(-5px);
+}
+
+/* Better button styling */
+button {
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Result styling by color feel */
+#result {
+    padding: 10px;
+    border-radius: 8px;
+    background: #f0f0f0;
+}
