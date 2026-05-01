@@ -60,15 +60,34 @@ function analyze() {
     }
 
     if (mood === "Stressed" && hours > 5) {
-        result.innerText = "🔴 High burnout risk. Take a break and relax.";
+        result.innerHTML = `
+        🔴 High burnout risk.<br>
+        Suggested Activities:<br>
+        • Take a short walk 🚶<br>
+        • Practice deep breathing 🧘<br>
+        • Listen to calming music 🎧
+    `;
     }
     else if (mood === "Neutral" && hours >= 3) {
-        result.innerText = "🟡 Moderate load. Maintain balance.";
+        result.innerHTML = `
+        🟡 Moderate load.<br>
+        Suggestions:<br>
+        • Stretch your body<br>
+        • Drink water 💧<br>
+        • Take a 10 min break
+    `;
     }
     else if (mood === "Happy" && hours >= 3) {
-        result.innerText = "🟢 Great productivity! Keep going.";
+        result.innerHTML = `
+        🟢 Great productivity!<br>
+        Keep maintaining your pace 💪
+    `;
     }
     else {
-        result.innerText = "📌 Try to improve consistency and focus.";
+        result.innerHTML = `
+        📌 Try to improve focus.<br>
+        • Set small goals<br>
+        • Avoid distractions
+    `;
     }
 }
