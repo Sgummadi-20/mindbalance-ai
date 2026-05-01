@@ -20,7 +20,7 @@
             <h2>📋 Tasks</h2>
 
             <input type="text" id="taskInput" placeholder="Enter task">
-            <button onclick="addTask()">Add</button>
+            <button type="button" onclick="addTask()">Add</button>
 
             <ul id="taskList"></ul>
         </div>
@@ -45,10 +45,11 @@
 
             <button onclick="analyze()">Analyze</button>
 
-            <p id="result"></p>
+            <div id="result"></div>
         </div>
 
     </div>
+    <button class="quick-btn" onclick="quickHelp()">I feel stuck</button>
 
     <script src="app.js"></script>
 
