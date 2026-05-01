@@ -1,9 +1,68 @@
-// Load tasks when page loads
+
 window.onload = function () {
     loadTasks();
 };
+function analyze() {
+    let mood = document.getElementById("mood").value;
+    let hours = parseInt(document.getElementById("hours").value);
+    let result = document.getElementById("result");
 
-// ---------------- TASK SYSTEM ----------------
+    if (!hours) {
+        result.innerHTML = "<p>⚠️ Please enter study hours</p>";
+        return;
+    }
+
+    let suggestions = "";
+    let status = "";
+
+    if (mood === "Stressed" && hours > 5) {
+        status = "🔴 High Burnout Detected";
+        suggestions = `
+            <div class="card">🚶 Take a short walk</div>
+            <div class="card">🧘 Practice deep breathing</div>
+            <div class="card">🎧 Listen to calming music</div>
+        `;
+    }
+    else if (mood === "Neutral" && hours >= 3) {
+        status = "🟡 Moderate Load";
+        suggestions = `
+            <div class="card">💧 Drink water</div>
+            <div class="card">🤸 Do light stretching</div>
+            <div class="card">⏱ Take a 10 min break</div>
+        `;
+    }
+    else if (mood === "Happy" && hours >= 3) {
+        status = "🟢 Good Productivity";
+        suggestions = `
+            <div class="card">💪 Maintain consistency</div>
+            <div class="card">📘 Continue learning</div>
+        `;
+    }
+    else {
+        status = "📌 Improve Focus";
+        suggestions = `
+            <div class="card">🎯 Set small goals</div>
+            <div class="card">📵 Avoid distractions</div>
+        `;
+    }
+
+    result.innerHTML = `
+        <h3>${status}</h3>
+        <div class="cards-container">
+            ${suggestions}
+        </div>
+    `;
+}
+function quickHelp() {
+    let result = document.getElementById("result");
+
+    result.innerHTML = `
+        <h3>⚡ Quick Recovery</h3>
+        <div class="card">⏱ Take a 5 min break</div>
+        <div class="card">💧 Drink water</div>
+        <div class="card">🎧 Listen to calm music</div>
+    `;
+}
 function addTask() {
     let input = document.getElementById("taskInput");
     let task = input.value;
@@ -17,7 +76,6 @@ function addTask() {
     input.value = "";
     loadTasks();
 }
-
 function loadTasks() {
     let taskList = document.getElementById("taskList");
     taskList.innerHTML = "";
@@ -27,10 +85,6 @@ function loadTasks() {
     tasks.forEach((task, index) => {
         let li = document.createElement("li");
         li.innerText = task;
-
-        li.onclick = function () {
-            li.style.textDecoration = "line-through";
-        };
 
         let del = document.createElement("button");
         del.innerText = "❌";
@@ -45,49 +99,4 @@ function loadTasks() {
         li.appendChild(del);
         taskList.appendChild(li);
     });
-}
-
-
-// ---------------- BURNOUT INTELLIGENCE ----------------
-function analyze() {
-    let mood = document.getElementById("mood").value;
-    let hours = parseInt(document.getElementById("hours").value);
-    let result = document.getElementById("result");
-
-    if (!hours) {
-        result.innerText = "⚠️ Please enter study hours";
-        return;
-    }
-
-    if (mood === "Stressed" && hours > 5) {
-        result.innerHTML = `
-        🔴 High burnout risk.<br>
-        Suggested Activities:<br>
-        • Take a short walk 🚶<br>
-        • Practice deep breathing 🧘<br>
-        • Listen to calming music 🎧
-    `;
-    }
-    else if (mood === "Neutral" && hours >= 3) {
-        result.innerHTML = `
-        🟡 Moderate load.<br>
-        Suggestions:<br>
-        • Stretch your body<br>
-        • Drink water 💧<br>
-        • Take a 10 min break
-    `;
-    }
-    else if (mood === "Happy" && hours >= 3) {
-        result.innerHTML = `
-        🟢 Great productivity!<br>
-        Keep maintaining your pace 💪
-    `;
-    }
-    else {
-        result.innerHTML = `
-        📌 Try to improve focus.<br>
-        • Set small goals<br>
-        • Avoid distractions
-    `;
-    }
 }
