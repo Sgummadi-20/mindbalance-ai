@@ -1,3 +1,8 @@
+// Load tasks when page loads
+window.onload = function () {
+    loadTasks();
+};
+
 // ---------------- TASK SYSTEM ----------------
 function addTask() {
     let input = document.getElementById("taskInput");
@@ -5,27 +10,41 @@ function addTask() {
 
     if (task === "") return;
 
-    let li = document.createElement("li");
-    li.innerText = task;
-
-    // Mark complete
-    li.onclick = function () {
-        li.style.textDecoration = "line-through";
-    };
-
-    // Delete button
-    let del = document.createElement("button");
-    del.innerText = "❌";
-    del.style.marginLeft = "10px";
-
-    del.onclick = function () {
-        li.remove();
-    };
-
-    li.appendChild(del);
-    document.getElementById("taskList").appendChild(li);
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    tasks.push(task);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 
     input.value = "";
+    loadTasks();
+}
+
+function loadTasks() {
+    let taskList = document.getElementById("taskList");
+    taskList.innerHTML = "";
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    tasks.forEach((task, index) => {
+        let li = document.createElement("li");
+        li.innerText = task;
+
+        li.onclick = function () {
+            li.style.textDecoration = "line-through";
+        };
+
+        let del = document.createElement("button");
+        del.innerText = "❌";
+        del.style.marginLeft = "10px";
+
+        del.onclick = function () {
+            tasks.splice(index, 1);
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            loadTasks();
+        };
+
+        li.appendChild(del);
+        taskList.appendChild(li);
+    });
 }
 
 
@@ -40,7 +59,6 @@ function analyze() {
         return;
     }
 
-    // Decision logic
     if (mood === "Stressed" && hours > 5) {
         result.innerText = "🔴 High burnout risk. Take a break and relax.";
     }
