@@ -29,7 +29,8 @@ https://sgummadi-20.github.io/mindbalance-ai/
 
 ## 📸 Screenshots
 ![Dashboard] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/dashboard.png?raw=true
-![Tasks] 
+
+![Tasks] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/tasks.png?raw=true
 ![Burnout]
 ![Recovery]
 
