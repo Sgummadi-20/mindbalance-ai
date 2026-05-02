@@ -31,7 +31,9 @@ https://sgummadi-20.github.io/mindbalance-ai/
 ![Dashboard] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/dashboard.png?raw=true
 
 ![Tasks] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/tasks.png?raw=true
-![Burnout]
+
+![Burnout] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/burnout.png?raw=true
+
 ![Recovery]
 
 ##  Project Goal
