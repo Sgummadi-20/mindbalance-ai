@@ -28,7 +28,7 @@ A smart productivity and burnout tracking system that helps students manage task
 https://sgummadi-20.github.io/mindbalance-ai/
 
 ## 📸 Screenshots
-![Dashboard] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/dashboard.png?raw=true
+![Dashboard] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/images/dashboard.png?raw=true
 
 ![Tasks] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/tasks.png?raw=true
 
