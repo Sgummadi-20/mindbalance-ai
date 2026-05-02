@@ -1,5 +1,5 @@
 #  MindBalance AI
-A smart productivity and burnout tracking system that helps students manage tasks and monitor mental fatigue using simple AI-like logic.
+A productivity + recovery assistant for students.
 
 ##  Live Demo
 https://sgummadi-20.github.io/mindbalance-ai/
@@ -37,7 +37,7 @@ To create a simple yet effective system that combines productivity tracking with
   - Take a break
   - Maintain balance
   - Improve focus
-  - 
+
 ##  Future Enhancements
 - AI-based recommendations
 - User authentication
