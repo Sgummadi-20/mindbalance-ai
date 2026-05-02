@@ -25,10 +25,13 @@ A smart productivity and burnout tracking system that helps students manage task
 
 ##  Live Demo
 
-
-
+https://sgummadi-20.github.io/mindbalance-ai/
 
 ## 📸 Screenshots
+![Dashboard]
+![Tasks]
+![Burnout]
+![Recovery]
 
 ##  Project Goal
 To create a simple yet effective system that combines productivity tracking with mental well-being monitoring for students.
