@@ -34,7 +34,7 @@ https://sgummadi-20.github.io/mindbalance-ai/
 
 ![Burnout] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/images/burnout.png?raw=true
 
-![Recovery] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/recovery.png?raw=true
+![Recovery] https://github.com/Sgummadi-20/mindbalance-ai/blob/main/images/recovery.png?raw=true
 
 ##  Project Goal
 To create a simple yet effective system that combines productivity tracking with mental well-being monitoring for students.
